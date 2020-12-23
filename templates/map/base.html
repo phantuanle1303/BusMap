@@ -1,0 +1,113 @@
+<!doctype html>
+{% load static %}
+{#{% load map_template_tags %}#}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="generator" content="Hugo 0.79.0">
+    <link rel="icon" href="{% static 'images/favicon.ico' %}">
+    <title>
+        Rango - {% block title %}How to Tango with Django!{% endblock %}
+    </title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/dashboard/">
+
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="static/assets/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+
+{#    <style>#}
+{#      .bd-placeholder-img {#}
+{#        font-size: 1.125rem;#}
+{#        text-anchor: middle;#}
+{#        -webkit-user-select: none;#}
+{#        -moz-user-select: none;#}
+{#        user-select: none;#}
+{#      }#}
+{##}
+{#      @media (min-width: 768px) {#}
+{#        .bd-placeholder-img-lg {#}
+{#          font-size: 3.5rem;#}
+{#        }#}
+{#      }#}
+{#    </style>#}
+  <style type="text/css">/* Chart.js */
+@keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand>div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink>div{position:absolute;width:200%;height:200%;left:0;top:0}</style>
+
+
+    <!-- Custom styles for this template -->
+        <link href="static/css/map/dashboard.css" type="text/css" rel="stylesheet">
+        <link href="static/css/map/map.css" type="text/css" rel="stylesheet">
+          <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+           integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+           crossorigin=""/>
+          <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+           integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+           crossorigin=""></script>
+  </head>
+  <body>
+
+    <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+      <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="https://new.utc.edu/research/center-urban-informatics-and-progress">CUIP</a>
+
+{#      <div class="navbar-collapse" id="navbar">#}
+{#        <ul class="navbar-nav px-3">#}
+{#          <li class="nav-item text-nowrap">#}
+{#            <a class="nav-link" href="{% url 'index' %}">Home</a>#}
+{#          </li>#}
+{#          <li class="nav-item">#}
+{#            <a class="nav-link" href="{% url 'about' %}">About</a>#}
+{#          </li>#}
+{#        </ul>#}
+{#      </div>#}
+    </header>
+
+    <div class="container-fluid">
+        <div class="row">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+          <div class="position-sticky pt-3">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'index' %}">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                  Home
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+            <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">
+                    {% block section_title %}
+                    {% endblock %}
+                </h1>
+                </div>
+            {% block body_block %}{% endblock %}
+            </div>
+        </div>
+    </div>
+    <script
+    src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js">
+    </script>
+    <script src="{% static "js/map/leaflet.js" %}"></script>
+
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script
+        src=
+        "http://v4-alpha.getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js">
+    </script>
+    <script>
+        const buses = "{{buses|escapejs}}";
+    </script>
+  </body>
+</html>
