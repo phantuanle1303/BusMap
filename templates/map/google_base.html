@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+{% load static %}
+{#{% load map_template_tags %}#}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="generator" content="Hugo 0.79.0">
+    <link rel="icon" href="{% static 'img/favicon.png' %}">
+    <title>
+        CUIP - {% block title %}{% endblock %}
+    </title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/dashboard/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="static/assets/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+  <style type="text/css">/* Chart.js */
+    @keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand>div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink>div{position:absolute;width:200%;height:200%;left:0;top:0}</style>
+
+    <!-- Custom styles for this template -->
+        <link href="static/css/map/dashboard.css" type="text/css" rel="stylesheet">
+        <link href="static/css/map/map.css" type="text/css" rel="stylesheet">
+        <link href="static/css/map/pricing.css" type="text/css" rel="stylesheet">
+          <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+           integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+           crossorigin=""/>
+          <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+           integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+           crossorigin=""></script>
+  {% block google_head %}
+  {% endblock %}
+  </head>
+  <body>
+
+    <header class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+      <a class="h5 my-0 me-md-auto fw-normal" href="https://new.utc.edu/research/center-urban-informatics-and-progress">
+          <img src="{% static 'img/header.png' %}" alt="CUIP" width="250px"/>
+      </a>
+        <nav class="my-2 my-md-0 me-md-3">
+            <a class="p-2 text-dark" href="https://www.utccuip.com/">Home</a>
+            <a class="p-2 text-dark" href="{% url 'index' %}">Bus Map</a>
+      </nav>
+    </header>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">
+                    {% block section_title %}
+                    {% endblock %}
+                </h1>
+                </div>
+            {% block body_block %}
+
+            {% endblock %}
+            </div>
+        </div>
+    </div>
+
+    <script
+    src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js">
+    </script>
+    {%block specific_js %}
+    {% endblock %}
+
+
+
+    <script src="../static/assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const buses = "{{buses|escapejs}}";
+    </script>
+  </body>
+</html>

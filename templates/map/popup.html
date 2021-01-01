@@ -1,0 +1,19 @@
+{% if bus %}
+        <h4><strong> {{bus_id}} </strong></h4><br/>
+        Fuel Used: {% if bus.fuel_used %}
+                        {{ bus.fuel_used }} gallon(s)
+                    {% else %}
+                        N/A
+                    {% endif %} <br/>
+        Speed: {% if bus.speed %}
+                        {{ bus.speed }} mph
+                    {% else %}
+                        N/A
+                    {% endif %} <br/>
+        Altitude: {% if bus.altitude %}
+                        {{ bus.altitude }} meter(s)
+                    {% else %}
+                        N/A
+                    {% endif %} <br/>
+{% endif %}
+

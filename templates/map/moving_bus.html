@@ -1,4 +1,4 @@
-{% extends 'map/base.html' %}
+{% extends 'map/base_leaflet.html' %}
 {% load static %}
 {% block title %}
     Index
@@ -12,7 +12,10 @@
       </div>
 {% endblock %}
 {% block body_block %}
-    <div id="mapid"></div>
+    <div id="map"></div>
 {#    <div id="map"></div>#}
 
+{% endblock %}
+{% block leaflet_example_js %}
+    <script type="text/javascript" src="{% static "js/map/moving_bus.js" %}"></script>
 {% endblock %}

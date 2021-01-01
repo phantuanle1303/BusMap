@@ -10,7 +10,7 @@ django.setup()
 from map.models import Bus
 
 NAN = float("nan")
-
+time_format = "%Y-%m-%d %H:%M:%S"
 
 def populate(data):
     df = pd.read_pickle(data)

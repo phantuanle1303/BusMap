@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Garmin Connect"
+  xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensionsv3.xsd http://www.garmin.com/xmlschemas/TrackPointExtension/v1 http://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd"
+  xmlns="http://www.topografix.com/GPX/1/1"
+  xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1"
+  xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <metadata>
+    <link href="connect.garmin.com">
+      <text>Garmin Connect</text>
+    </link>
+    <time>2014-03-08T07:27:47.000Z</time>
+  </metadata>
+  <trk>
+    <name>Soller - Pollença</name>
+    <trkseg>
+      <trkpt lon="2.7112986613065004" lat="39.76036889478564">
+        <ele>76.5999984741211</ele>
+        <time>2014-03-08T07:27:47.000Z</time>
+      </trkpt>
+      <trkpt lon="2.711321795359254" lat="39.76036302745342">
+        <ele>76.5999984741211</ele>
+        <time>2014-03-08T07:27:48.000Z</time>
+      </trkpt>
+      <trkpt lon="2.7114269882440567" lat="39.760367553681135">
+        <ele>77.4000015258789</ele>
+        <time>2014-03-08T07:27:51.000Z</time>
+      </trkpt>
+      <trkpt lon="2.71153025329113" lat="39.76038456894457">
+        <ele>76.5999984741211</ele>
+        <time>2014-03-08T07:27:55.000Z</time>
+      </trkpt>
+      <trkpt lon="2.7115902677178383" lat="39.760409547016025">
+        <ele>76.5999984741211</ele>
+        <time>2014-03-08T07:27:59.000Z</time>
+      </trkpt>
+      <trkpt lon="2.711536204442382" lat="39.76046436466277">
+        <ele>77.0</ele>
+        <time>2014-03-08T07:28:01.000Z</time>
+      </trkpt>
+      <trkpt lon="2.7115098852664232" lat="39.76048246957362">
+        <ele>77.0</ele>
+        <time>2014-03-08T07:28:02.000Z</time>
+      </trkpt>
+      <trkpt lon="2.711460432037711" lat="39.760567462071776">
+        <ele>78.19999694824219</ele>
+        <time>2014-03-08T07:28:07.000Z</time>
+      </trkpt>
+      <trkpt lon="2.7114356216043234" lat="39.760638205334544">
+        <ele>79.4000015258789</ele>
+        <time>2014-03-08T07:28:11.000Z</time>
+      </trkpt>
+      <trkpt lon="2.7114190254360437" lat="39.760673912242055">
+        <ele>79.80000305175781</ele>
+        <time>2014-03-08T07:28:13.000Z</time>
+      </trkpt>
+      <trkpt lon="2.7113922871649265" lat="39.760712049901485">
+        <ele>80.19999694824219</ele>
+        <time>2014-03-08T07:28:15.000Z</time>
+      </trkpt>
+      <trkpt lon="2.711368650197983" lat="39.760761335492134">
+        <ele>80.5999984741211</ele>
+        <time>2014-03-08T07:28:18.000Z</time>
+      </trkpt>
+      <trkpt lon="2.7113484498113394" lat="39.76082855835557">
+        <ele>80.80000305175781</ele>
+        <time>2014-03-08T07:28:22.000Z</time>
+      </trkpt>
+      <trkpt lon="2.711319364607334" lat="39.760880107060075">
+        <ele>81.0</ele>
+        <time>2014-03-08T07:28:25.000Z</time>
+      </trkpt>
+      <trkpt lon="2.711292626336217" lat="39.76093903183937">
+        <ele>81.19999694824219</ele>
+        <time>2014-03-08T07:28:28.000Z</time>
+      </trkpt>
+      <trkpt lon="2.7112337853759527" lat="39.76108026690781">
+        <ele>81.4000015258789</ele>
+        <time>2014-03-08T07:28:35.000Z</time>
+      </trkpt>
+      </trkseg>
+  </trk>
+</gpx>

@@ -1,0 +1,17 @@
+{% if bus_list %}
+<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+            Select a bus
+</button>
+<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <li><a class="dropdown-item" href="#">All Buses</a></li>
+    {% for bus in bus_list %}
+        {%  if bus == selected_bus %}
+            <li><strong><a class="dropdown-item" href="#">{{ bus }}</a></strong></li>
+        {% else %}
+            <li><a class="dropdown-item" href="#">{{ bus }}</a></li>
+        {% endif %}
+    {% endfor %}
+</ul>
+{% else %}
+    <strong>No buses found!</strong>
+{% endif %}

@@ -1,0 +1,34 @@
+{
+   "type": "FeatureCollection",
+   "features": [{
+       "type": "Feature",
+       "geometry": {
+           "type": "Point",
+           "coordinates": [-4.4214296, 36.73835]
+       },
+       "properties": {
+           "name": "test bus",
+           "times": ["2019-11-23 10:51:06"]
+       }
+   }, {
+       "type": "Feature",
+       "geometry": {
+           "type": "Point",
+           "coordinates": [-4.422104, 36.737865]
+       },
+       "properties": {
+           "name": "test bus",
+           "times": ["2019-11-23 10:52:05"]
+       }
+   }, {
+       "type": "Feature",
+       "geometry": {
+           "type": "Point",
+           "coordinates": [-4.4229302, 36.73773]
+       },
+       "properties": {
+           "name": "test bus",
+           "times": ["2019-11-23 10:53:05"]
+       }
+   }]
+}

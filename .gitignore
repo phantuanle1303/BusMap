@@ -1,2 +1,5 @@
 # Project exclude paths
 /venv/
+/map/migrations/
+/db.sqlite3
+/static/js/map/gmapapikey.js
