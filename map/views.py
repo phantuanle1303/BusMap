@@ -100,8 +100,8 @@ def get_bus_list(request):
 
 def get_bus_attributes(request):
     print(request)
-    bus_list = []
-    name = ""
+    # bus_list = []
+    # name = ""
     if request.method == 'GET':
         lat = float(request.GET['lat'])
         lon = float(request.GET['lon'])
@@ -109,8 +109,12 @@ def get_bus_attributes(request):
         query_date = float(request.GET['query_date'])
         query_date = datetime.date.fromtimestamp(query_date)
         bus_list = get_bus_attr_from_db(lat, lon, name, query_date)
-        print(bus_list[0].latitude, bus_list[0].longitude)
-    return render(request, "map/popup.html", {"bus": bus_list[0], "bus_id": name})
+        bus = bus_list[0]
+        bus.speed = round(Utilities.convert_to_mile(bus.speed), 1)
+        bus.fuel_used = round(Utilities.convert_to_gallon(bus.fuel_used), 4)
+        bus.gps_timestamp = datetime.datetime.fromtimestamp(bus.gps_timestamp).strftime(TIME_FORMAT)
+        bus.altitude = round(bus.altitude, 2)
+        return render(request, "map/popup.html", {"bus": bus, "bus_id": name})
 
 
 def retrieve_select_bus(request):

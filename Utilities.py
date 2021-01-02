@@ -43,6 +43,14 @@ def format_bus_string(bus_list):
     return sorted(formatted_bus_list)
 
 
+def convert_to_mile(value):
+    return value * 0.62137
+
+
+def convert_to_gallon(value):
+    return value * 0.26417205236
+
+
 if __name__ == "__main__":
     bus_list = test_query()
     bus_id = "Gillig #138"
