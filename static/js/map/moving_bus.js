@@ -1,6 +1,7 @@
 function addGeoJSONLayer(map, data) {
     var icon = L.icon({
-        iconUrl: image_link + '039-bus.png',
+        // iconUrl: image_link + '039-bus.png',
+        iconUrl: image_link + 'bus.png',
         iconSize: [30, 30],
         iconAnchor: [11, 11]
     });
