@@ -8,9 +8,9 @@ function addGeoJSONLayer(map, data) {
     console.log(data);
     var geoJSONLayer = L.geoJSON(data, {
         pointToLayer: function (feature, latLng) {
-            console.log(feature);
+            // console.log(feature);
             if (feature.properties.hasOwnProperty('last')) {
-                console.log(feature);
+                // console.log(feature);
                 var marker = new L.Marker(latLng, {
                     icon: icon,
                 });
@@ -19,8 +19,9 @@ function addGeoJSONLayer(map, data) {
                     const lon = latLng.lng;
                     const bus = feature.properties["name"];
                     const query_date = feature.properties["query_date"];
-                    console.log(lat, lon, bus);
+                    // console.log(lat, lon, bus);
                     $.get("/map/bus_attr/", {lat: lat, lon: lon, name:bus, query_date: query_date}, function(data){
+                        console.log(data);
                         marker.bindPopup(data);
                         ev.target.openPopup();
                     });
@@ -164,7 +165,7 @@ $(document).ready(function() {
         var animated = true;
         $.get("/map/retrieve_bus/", {query_date: query_date, query_bus: query_bus, animated: animated}, function(data){
             console.log(data);
-            if(data == "Not Implemented!"){
+            if(data == "Feature has not been implemented! Please select a bus to continue!"){
                 alert(data);
             }
             else{

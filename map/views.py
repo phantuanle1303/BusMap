@@ -88,6 +88,7 @@ def multiple_bus(request):
 
 
 def get_bus_list(request):
+    print(request)
     bus_name = []
     if request.method == 'GET':
         query_date = request.GET['query_date']
@@ -110,10 +111,14 @@ def get_bus_attributes(request):
         query_date = datetime.date.fromtimestamp(query_date)
         bus_list = get_bus_attr_from_db(lat, lon, name, query_date)
         bus = bus_list[0]
-        bus.speed = round(Utilities.convert_to_mile(bus.speed), 1)
-        bus.fuel_used = round(Utilities.convert_to_gallon(bus.fuel_used), 4)
+        print(bus)
+        if bus.speed is not None:
+            bus.speed = round(Utilities.convert_to_mile(bus.speed), 1)
+        if bus.fuel_used is not None:
+            bus.fuel_used = round(Utilities.convert_to_gallon(bus.fuel_used), 4)
         bus.gps_timestamp = datetime.datetime.fromtimestamp(bus.gps_timestamp).strftime(TIME_FORMAT)
-        bus.altitude = round(bus.altitude, 2)
+        if bus.altitude is not None:
+            bus.altitude = round(bus.altitude, 2)
         return render(request, "map/popup.html", {"bus": bus, "bus_id": name})
 
 
@@ -130,7 +135,7 @@ def retrieve_select_bus(request):
                 bus_geojson = get_bus_data(query_date, query_bus)
                 return HttpResponse(bus_geojson)
             else:
-                return HttpResponse("Not Implemented!")
+                return HttpResponse("Feature has not been implemented! Please select a bus to continue!")
         else:
             if query_bus != "All Buses":
                 bus_list = Bus.objects.filter(date__date=query_date, vehicle_id=query_bus, latitude__isnull=False).order_by(
